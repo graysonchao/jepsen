@@ -1,0 +1,26 @@
+version: '2'
+services:
+  control:
+    container_name: jepsen-control
+    hostname: control
+    build: ./control
+    env_file: ./secret/control.env
+    privileged: true
+    ports:
+      - "8080"
+  node:
+    build: ./node
+    env_file: ./secret/node.env
+    privileged: true
+    command: /setup_ssh.sh >/dev/null
+    tty: true
+  n1:
+    extends: node
+  n2:
+    extends: node
+  n3:
+    extends: node
+  n4:
+    extends: node
+  n5:
+    extends: node
