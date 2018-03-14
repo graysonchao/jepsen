@@ -23,7 +23,7 @@ RUN wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
     lein self-install
 
 # You need to locate jepsen in this directory (up.sh does that automatically)
-RUN git clone https://github.com/graysonchao/jepsen.credis /jepsen
+RUN git clone https://github.com/graysonchao/jepsen /jepsen
 RUN cd /jepsen/jepsen && lein install
 
 ADD ./bashrc /root/.bashrc

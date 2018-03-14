@@ -15,6 +15,7 @@ if [ ! -f ~/.ssh/known_hosts ]; then
 fi
 
 # TODO: assert that SSH_PRIVATE_KEY==~/.ssh/id_rsa
+echo "eval $(ssh-agent)" > ~/.bashrc
 
 cat <<EOF 
 Welcome to Jepsen on Docker
